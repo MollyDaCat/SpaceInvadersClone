@@ -1,2 +1,2 @@
 # SpaceInvadersClone
- Space Invaders Clone
+ Space invaders Clone
