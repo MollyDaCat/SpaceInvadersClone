@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/11112__jimpurbrick__mellowdrone.wav-4976d2ef034dee8ef1261ed630de2ef0.sample"
+
+[deps]
+
+source_file="res://Music/11112__jimpurbrick__mellowdrone.wav"
+dest_files=[ "res://.import/11112__jimpurbrick__mellowdrone.wav-4976d2ef034dee8ef1261ed630de2ef0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,185 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameWave2.gd" type="Script" id=2]
+[ext_resource path="res://Enemies(GroupNode).tscn" type="PackedScene" id=3]
+[ext_resource path="res://MainMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Wave Number.gd" type="Script" id=6]
+[ext_resource path="res://Score.gd" type="Script" id=7]
+[ext_resource path="res://Score Scripts For Buttons/Highscore.gd" type="Script" id=8]
+[ext_resource path="res://Items.gd" type="Script" id=9]
+[ext_resource path="res://Images/Background(Dark).tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 662.068, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 371.883 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 402.498 )
+
+[sub_resource type="GDScript" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Layer1" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Layer1"]
+margin_left = 1203.0
+margin_right = 1280.0
+margin_bottom = 28.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layer1/VBoxContainer2"]
+margin_right = 77.0
+margin_bottom = 14.0
+
+[node name="Wave = " type="Label" parent="Layer1/VBoxContainer2/HBoxContainer"]
+margin_right = 47.0
+margin_bottom = 14.0
+text = "Wave ="
+
+[node name="Wave Number" type="Label" parent="Layer1/VBoxContainer2/HBoxContainer"]
+margin_left = 51.0
+margin_right = 59.0
+margin_bottom = 14.0
+text = "1"
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Layer1"]
+margin_left = 1.0
+margin_top = 705.0
+margin_right = 160.0
+margin_bottom = 719.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Layer1/VBoxContainer"]
+margin_right = 159.0
+margin_bottom = 14.0
+
+[node name="Highscore =" type="Label" parent="Layer1/VBoxContainer/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 14.0
+text = "Highscore = "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highscore" type="Label" parent="Layer1/VBoxContainer/HBoxContainer"]
+margin_left = 84.0
+margin_right = 92.0
+margin_bottom = 14.0
+text = "0"
+script = ExtResource( 8 )
+
+[node name="Score = " type="Label" parent="Layer1/VBoxContainer/HBoxContainer"]
+margin_left = 96.0
+margin_right = 147.0
+margin_bottom = 14.0
+text = "Score = "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Layer1/VBoxContainer/HBoxContainer"]
+margin_left = 151.0
+margin_right = 159.0
+margin_bottom = 14.0
+text = "0"
+script = ExtResource( 7 )
+
+[node name="HUD" type="VBoxContainer" parent="Layer1"]
+margin_right = 72.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuReturn" type="Button" parent="Layer1/HUD"]
+margin_right = 72.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://TitleScene.tscn"
+
+[node name="Node2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( -33.4174, -23.4935 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+speed = 400
+
+[node name="Enemies" parent="." instance=ExtResource( 3 )]
+
+[node name="Area_Top" type="KinematicBody2D" parent="." groups=[
+"Top",
+]]
+position = Vector2( 639.081, -11.7725 )
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Top"]
+shape = SubResource( 2 )
+
+[node name="Area_Top2" type="KinematicBody2D" parent="." groups=[
+"Top",
+]]
+position = Vector2( 639.081, 767.06 )
+collision_layer = 0
+collision_mask = 16393
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Top2"]
+shape = SubResource( 2 )
+
+[node name="Area_Right" type="Area2D" parent="." groups=[
+"right",
+]]
+position = Vector2( 1290.2, 358.04 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Right"]
+shape = SubResource( 3 )
+
+[node name="Area_Left" type="Area2D" parent="." groups=[
+"left",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Left"]
+position = Vector2( -10.1293, 342.275 )
+shape = SubResource( 4 )
+
+[node name="Area_Bottom" type="Area2D" parent="." groups=[
+"Bottom",
+]]
+collision_layer = 512
+collision_mask = 512
+script = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area_Bottom"]
+position = Vector2( 640.338, 629.185 )
+shape = SubResource( 2 )
+
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Area_Bottom_Player" type="Area2D" parent="."]
+collision_layer = 16385
+collision_mask = 16385
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area_Bottom_Player"]
+position = Vector2( 652.713, 728.923 )
+shape = SubResource( 2 )

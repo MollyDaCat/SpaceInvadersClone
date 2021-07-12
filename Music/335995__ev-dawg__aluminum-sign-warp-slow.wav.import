@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/335995__ev-dawg__aluminum-sign-warp-slow.wav-d192a16da9b0e155e17cbe455bc8cab7.sample"
+
+[deps]
+
+source_file="res://Music/335995__ev-dawg__aluminum-sign-warp-slow.wav"
+dest_files=[ "res://.import/335995__ev-dawg__aluminum-sign-warp-slow.wav-d192a16da9b0e155e17cbe455bc8cab7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

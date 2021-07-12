@@ -1,0 +1,233 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TextureRect4.gd" type="Script" id=1]
+[ext_resource path="res://TextureRect3.gd" type="Script" id=2]
+[ext_resource path="res://1stImage.gd" type="Script" id=3]
+[ext_resource path="res://TextureRect2.gd" type="Script" id=4]
+[ext_resource path="res://Images/ep1_space_invaders_assets/player.png" type="Texture" id=5]
+[ext_resource path="res://Images/ep1_space_invaders_assets/enemy.png" type="Texture" id=6]
+[ext_resource path="res://Text/PressStart2P-Regular.ttf" type="DynamicFontData" id=7]
+
+
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 3
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 2
+font_data = ExtResource( 7 )
+
+[node name="Title Scene" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 126.453
+margin_top = 80.9016
+margin_right = 1166.45
+margin_bottom = 640.902
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="HBoxContainer" parent="Menu"]
+margin_right = 1039.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Title"]
+margin_right = 95.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+texture = ExtResource( 6 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Menu/Title"]
+margin_left = 99.0
+margin_top = 2.0
+margin_right = 939.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Space Invaders"
+uppercase = true
+
+[node name="TextureRect2" type="TextureRect" parent="Menu/Title"]
+margin_left = 943.0
+margin_right = 1039.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Middle Section" type="HBoxContainer" parent="Menu"]
+margin_top = 68.0
+margin_right = 1039.0
+margin_bottom = 531.0
+size_flags_vertical = 3
+
+[node name="Game Modes" type="VBoxContainer" parent="Menu/Middle Section"]
+margin_right = 517.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="New Game" type="Button" parent="Menu/Middle Section/Game Modes"]
+margin_right = 517.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.580392, 0.580392, 0.580392, 1 )
+text = "New Game"
+flat = true
+align = 0
+
+[node name="Continue" type="Button" parent="Menu/Middle Section/Game Modes"]
+margin_top = 116.0
+margin_right = 517.0
+margin_bottom = 229.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.580392, 0.580392, 0.580392, 1 )
+text = "Continue"
+flat = true
+align = 0
+
+[node name="Options" type="Button" parent="Menu/Middle Section/Game Modes"]
+margin_top = 233.0
+margin_right = 517.0
+margin_bottom = 346.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.580392, 0.580392, 0.580392, 1 )
+text = "Options"
+flat = true
+align = 0
+
+[node name="Quit" type="Button" parent="Menu/Middle Section/Game Modes"]
+margin_top = 350.0
+margin_right = 517.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_hover = Color( 0.580392, 0.580392, 0.580392, 1 )
+text = "Quit"
+flat = true
+align = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Middle Section"]
+margin_left = 521.0
+margin_right = 1039.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+
+[node name="App Info" type="HBoxContainer" parent="Menu"]
+margin_top = 535.0
+margin_right = 1039.0
+margin_bottom = 560.0
+
+[node name="Version" type="Label" parent="Menu/App Info"]
+margin_right = 334.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "V:0.1"
+
+[node name="Dev Name" type="Label" parent="Menu/App Info"]
+margin_left = 338.0
+margin_right = 672.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Tasman H"
+
+[node name="High Score" type="Label" parent="Menu/App Info"]
+margin_left = 676.0
+margin_right = 1010.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "High Score"
+
+[node name="True High Score" type="Label" parent="Menu/App Info"]
+margin_left = 1014.0
+margin_right = 1039.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "0"
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+margin_left = 965.0
+margin_top = 590.341
+margin_right = 1029.0
+margin_bottom = 654.341
+rect_rotation = -90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+margin_left = 965.0
+margin_top = 474.832
+margin_right = 1029.0
+margin_bottom = 538.833
+rect_rotation = -90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 963.941
+margin_top = 345.978
+margin_right = 1027.94
+margin_bottom = 409.978
+rect_rotation = -90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+script = ExtResource( 4 )
+
+[node name="1stImage" type="TextureRect" parent="."]
+margin_left = 965.0
+margin_top = 235.103
+margin_right = 1029.0
+margin_bottom = 299.103
+rect_rotation = -90.0
+texture = ExtResource( 5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="Menu/Middle Section/Game Modes/New Game" to="1stImage" method="_on_New_Game_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Middle Section/Game Modes/New Game" to="1stImage" method="_on_New_Game_mouse_exited"]
+[connection signal="mouse_entered" from="Menu/Middle Section/Game Modes/Continue" to="TextureRect2" method="_on_Continue_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Middle Section/Game Modes/Continue" to="TextureRect2" method="_on_Continue_mouse_exited"]
+[connection signal="mouse_entered" from="Menu/Middle Section/Game Modes/Options" to="TextureRect3" method="_on_Options_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Middle Section/Game Modes/Options" to="TextureRect3" method="_on_Options_mouse_exited"]
+[connection signal="mouse_entered" from="Menu/Middle Section/Game Modes/Quit" to="TextureRect4" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Middle Section/Game Modes/Quit" to="TextureRect4" method="_on_Quit_mouse_exited"]

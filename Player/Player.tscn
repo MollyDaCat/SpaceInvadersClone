@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/ep1_space_invaders_assets/player.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Images/Light.png" type="Texture" id=3]
+[ext_resource path="res://Player/HealthTimer.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28.5385, 18.5998 )
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
+position = Vector2( 650, 670 )
+collision_layer = 16385
+collision_mask = 16385
+script = ExtResource( 2 )
+scene_to_load = "res://Lose.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Player",
+]]
+position = Vector2( 0.0787468, 6.37835 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." groups=[
+"Player",
+]]
+position = Vector2( -0.0787468, -3.46478 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Player",
+]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" groups=[
+"Player",
+]]
+position = Vector2( 0.0787354, 6.37836 )
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 75.6878, -136.976 )
+rotation = -1.5708
+scale = Vector2( 1.21716, 1.21109 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource( 4 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
